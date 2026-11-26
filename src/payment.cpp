@@ -21,6 +21,6 @@ bool processPayment(double amount)
 
     std::string key(configuredKey);
     bool authorized = gatewayAuthorize(key.c_str(), amount);
-    memset(key.data(), 0, key.size());
+    explicit_bzero(key.data(), key.size());
     return authorized;
 }
