@@ -50,7 +50,7 @@ bool Invoice::removeBook(const Book &book)
     {
         if (books[position].equals(book))
         {
-            for (int i = position; i < nBooks; i++)
+            for (int i = position; i + 1 < nBooks; i++)
             {
                 books[i] = books[i + 1];
                 quantities[i] = quantities[i + 1];
